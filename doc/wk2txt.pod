@@ -1,0 +1,41 @@
+=head1 NAME
+
+wk2txt - A Website to Text Converter
+
+=head1 SYNOPSIS
+
+B<wk2txt> I<options>
+
+Options:
+  --input URL               convert I<URL> to text
+  --urlfile file            convert URLs in I<file> to text
+  --output directory        save output in directory I<directory>
+  --xml                     dump in XML format
+  --timeout inverval        timeout after I<interval> seconds (NOT IMPLEMENTED)
+  --debug                   print diagnostic information
+  --help                    print help on options
+  --version                 print version number
+
+=head1 DESCRIPTION
+
+wk2txt is a command line tool based on the WebKit Engine to get the text content 
+of a websites as seen by current webbrowsers which includes the evaluation of 
+javascript code present in many modern webpages.
+
+wk2txt can process a whole list of URLs, which can be built by using the 
+C<--input> option multiple times or by passing the filename of a list of URLs to
+the C<--urlfile>. This file is expected to have 1 URL per line.
+
+The contents of the webpages is written to one file per webpage. The files are
+stored in the directory specified by the C<--output> option. The filename is 
+derived from the URL, it is the SHA1 hash code for the URL.
+
+By default, wk2txt dumps the contents and the meta data of the webpage in plain
+text format. If the C<--xml> option is used, content and meta data is dumped in
+XML format.
+
+=head1 AUTHOR
+	
+S<Christian Plessl E<lt>christian.plessl@oetiker.chE<gt>>
+S<Roman Plessl E<lt>roman.plessl@oetiker.chE<gt>>
+
